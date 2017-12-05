@@ -1,16 +1,13 @@
 package Retirement;
 
-import javax.swing.*;
-//todo create methods for gui.createTable, Process.dataExists(title), Process.loadPrevious(title).
-//todo give loadButton if statement to display warning popup if no load data found
-//todo have load button tell processor to extract data from database
-//todo parse ints from text like $ and ,
-//todo make sure table works
-//todo refactor DatabaseIO
-//todo remove old comments
-//todo comment code
-
 /**Created by Jorri on 12/3/17. This is the final project for Java Programming class with Clara James.*/
+
+
+import javax.swing.*;
+//todo create methods for Process.dataExists(title), Process.loadPrevious(title).
+//todo have load button tell processor to extract data from database
+//todo validate user input to not be blank and to be within ranges.
+//todo make sure parse ints work from text like $ and ,
 
 class RetirementCalculatorProgram {
     //what style the GUI will use
