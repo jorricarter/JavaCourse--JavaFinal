@@ -4,10 +4,21 @@ package Retirement;
 
 
 import javax.swing.*;
-//todo create methods for Process.dataExists(title), Process.loadPrevious(title).
-//todo have load button tell processor to extract data from database
-//todo validate user input to not be blank and to be within ranges.
-//todo make sure parse ints work from text like $ and ,
+//TODO how to convert data from GUI inputs to JTable (TableGenerator)
+//TODO install database
+//TODO how to create database (can java do it or does it need to be prepped)
+//TODO how to check for if a database exists (DatabaseIO.dataExists(title))
+//TODO how to check number of databases to know which one to load and which number to save new one as (DatabaseIO)
+//TODO processes in Process for determining naming convention (Process.loadPrevious(title))
+//TODO how to create database table (DatabaseIO)
+//TODO how to put data into database table (DatabaseIO)
+//TODO how to get data from database table (DatabaseIO)
+//TODO how to insert data into JTable (CalculatorGUI.createTable)
+//TODO how to convert from database format to JTable format (TableGenerator)
+//TODO have load button tell processor to extract data from database
+//TODO validate user input to not be blank and to be within ranges; manage floats.
+//TODO make sure parse ints work from text like $ and ,
+//TODO include instructions on how to prep database for this application
 
 class RetirementCalculatorProgram {
     //what style the GUI will use
