@@ -36,7 +36,7 @@ public class CalculatorGUI extends JFrame{
     //FINAL column headings
     private final String[] ColumnHeadings = {"Age", "Required", "Savings", "Needed", "Percent"};
     //making this global so if one method puts it together, I don't need to repeat adding the same 8 items in other methods.
-    private static String[][] jTableData;
+    private String[][] jTableData;
 
 //THIS DOUBLES AS AN OVERRIDE AND A GET METHOD. THE OVERRIDE NAMES THE JFRAME AND WHEN THE METHOD IS CALLED BY OTHER CLASSES, IT WILL RETURN THE NAME OF THE CALCULATOR.
     @Override
@@ -72,15 +72,18 @@ public class CalculatorGUI extends JFrame{
         generateButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                //store data so data doesn't need to be collected again. Reducing collecting also reduces errors in case text changes in between checks.
+                String[] allJText = getAllTextFields();
                 //if (a field is blank) {alert user;}
+                for (in i = )
                 if (lifeField.getText().isEmpty()|| incrementField.getText().isEmpty() || ageField.getText().isEmpty()|| savingsField.getText().isEmpty() || incomeField.getText().isEmpty() || annualField.getText().isEmpty() || retirementField.getText().isEmpty() || mortgageField.getText().isEmpty()){
                     //display alert to notify user of error
                     showMessage("Please input a value for each category.", "Empty field", 1);
                 //necessary data isn't blank {display table}
                 }else {
-                    //feed calculatorData to processor to get table of what will fill retirementTable
+                    //get all data from form and convert it to list of doubles without '$' or ','
                     doubleArrayToJTableData(Proc.accountStringArrayToDoubleArray(getAllTextFields()));
-
+                    jTableDat
                     createTable(jTableData, jTableAlignment);
                 }
             }
