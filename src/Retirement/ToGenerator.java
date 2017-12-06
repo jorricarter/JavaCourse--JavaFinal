@@ -5,4 +5,13 @@ package Retirement;
 
 public class ToGenerator {
 
+    public double[] accountStringArrayToDoubleArray(String[] allTextFields) {
+        return new double[10];
+    }
+
+    protected static String parseNumbers(String st) {
+        return st.replaceAll("[^\\d.]", "");
+    }
+
 }
+

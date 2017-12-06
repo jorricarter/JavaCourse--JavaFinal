@@ -9,6 +9,8 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import static Retirement.DataProcessor.Proc;
+
 public class CalculatorGUI extends JFrame{
     private JPanel mainPanel;
     JPanel dataEntryPanel;
@@ -31,10 +33,10 @@ public class CalculatorGUI extends JFrame{
 
     //Title that appears on top of form's program-window. has a get method as well.
     private final String Title = "Retirement Calculator";
-    //create list to store current settings and send to method for creating table.
-    private String[] calculatorData;
     //FINAL column headings
     private final String[] ColumnHeadings = {"Age", "Required", "Savings", "Needed", "Percent"};
+    //making this global so if one method puts it together, I don't need to repeat adding the same 8 items in other methods.
+    private static String[][] jTableData;
 
 //THIS DOUBLES AS AN OVERRIDE AND A GET METHOD. THE OVERRIDE NAMES THE JFRAME AND WHEN THE METHOD IS CALLED BY OTHER CLASSES, IT WILL RETURN THE NAME OF THE CALCULATOR.
     @Override
@@ -43,9 +45,6 @@ public class CalculatorGUI extends JFrame{
     }
 
     CalculatorGUI() {
-        //color for items that don't update properly after Nimbus theme is applied
-        final Color ToolTipColor = new Color(20, 80, 120);
-        final Color RowColor = new Color(90, 150, 250);
         //formatter to align numbers to the right. Makes more sense for this kind of app
         DefaultTableCellRenderer jTableAlignment = new DefaultTableCellRenderer();
         jTableAlignment.setHorizontalAlignment(JLabel.RIGHT);
@@ -53,10 +52,6 @@ public class CalculatorGUI extends JFrame{
         createTable(new String[100][5], jTableAlignment);
         //sets up grid because grid doesn't appear properly with this style
         retirementTable.setShowGrid(true);
-        retirementTable.setGridColor(Color.black);
-//FOUND THESE FROM EXPERIMENTING AND PURE LUCK
-        UIManager.put("ToolTip[Enabled].background", ToolTipColor);
-        UIManager.put("Table.alternateRowColor", RowColor);
         //start the actual GUI.
         setContentPane(mainPanel);
         setPreferredSize(new Dimension(800, 600));
@@ -83,16 +78,9 @@ public class CalculatorGUI extends JFrame{
                     showMessage("Please input a value for each category.", "Empty field", 1);
                 //necessary data isn't blank {display table}
                 }else {
-                    //put data from calculator into a list to be sent to DataProcessor for processing.
-                    calculatorData = new String[] {
-                            ageField.getText(), lifeField.getText(), incrementField.getText(), savingsField.getText(),
-                            incomeField.getText(), annualField.getText(), retirementField.getText(), mortgageField.getText()
-                    };
                     //feed calculatorData to processor to get table of what will fill retirementTable
-//                    String dataString = (calculatorData);
-//FOR TESTING PURPOSES ONLY
-                    String[] data = {"a", "s", "d", "f", "g"};
-                    String[][] jTableData = {data, data, data, data, data};
+                    doubleArrayToJTableData(Proc.accountStringArrayToDoubleArray(getAllTextFields()));
+
                     createTable(jTableData, jTableAlignment);
                 }
             }
@@ -103,10 +91,21 @@ public class CalculatorGUI extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 if (retirementTable.getRowCount()<100) showMessage("Please populate the table to save it.", "Table is empty.", 0);
                 else {
-                    DatabaseIO.writeToDatabase(DatabaseIO.createDatabaseName(lifeField.getText()), incrementField.getText());
+                    DatabaseIO.writeToDatabase(DatabaseIO.nameDatabase(), jTableData);
                 }
             }
         });
+    }
+
+    private String[] getAllTextFields() {
+        return new String[] {ageField.getText(), lifeField.getText(), incrementField.getText(), savingsField.getText(),
+                            incomeField.getText(), annualField.getText(), retirementField.getText(), mortgageField.getText()
+        };
+    }
+
+    private String[][] doubleArrayToJTableData (double[] allTextFields) {
+        jTableData = new String[10][5];
+        return jTableData;
     }
 
     private void createTable(String[][] tableData, DefaultTableCellRenderer jTableAlignment) {

@@ -2,10 +2,8 @@ package Retirement;
 
 /**Created by Jorri on 12/3/17. This is the final project for Java Programming class with Clara James.*/
 
+import static Retirement.DataProcessor.Proc;
 
-import javax.swing.*;
-//SWING DEFAULT CONSTRUCTOR
-//
 //TODO how to convert data from GUI inputs to JTable (ToGenerator)
 //TODO install database
 //TODO how to create database (can java do it or does it need to be prepped)
@@ -25,23 +23,8 @@ import javax.swing.*;
 //TODO include instructions on how to prep database for this application
 
 class RetirementCalculatorProgram {
-    //what style the GUI will use
-    final static String GUIStyle = "javax.swing.plaf.nimbus.NimbusLookAndFeel";
 
     public static void main(String[] args) {
-        GUIStyle();
-        CalculatorGUI gui = new CalculatorGUI();
-    }
-
-    private static void GUIStyle() {
-        //COPIED FROM JAVA DOCS ON HOW TO CHANGE GUI STYLE. USE TRY STATEMENT SO IF STYLE DOESN'T EXIST, ENTIRE PROGRAM STILL RUNS.
-        try {
-            //Set it as nimbus
-            UIManager.setLookAndFeel(GUIStyle);
-            //if nimbus isn't found, don't crash. Let me know why my program now looks strange.
-        } catch (Exception e) {
-
-            System.out.println("Nimbus style could not be loaded. App may look strange, but should function normally.");
-        }
+        Proc.startProgram();
     }
 }

@@ -1,21 +1,20 @@
 package Retirement;
 
-import java.io.IOException;
+import static Retirement.DataProcessor.Proc;
 
 /**Created by Jorri on 12/3/17. This is the final project for Java Programming class with Clara James.*/
 
 public class DatabaseIO {
-    
-    public static String createDatabaseName(String name) {
-        name = parseNumbers(name);
-        return String.format("%s_database", name);
+    //keep track of number of databases for naming scheme(name followed by number of databases)(only saves 10)
+    private static int databaseQuant = 0;
+
+    public static String nameDatabase() {
+        String name = String.format("%s_database"+databaseQuant, Proc.getTitle());
+        databaseQuant++;
+        return name;
     }
 
-    protected static String parseNumbers(String st) {
-        return st.replaceAll("[^0-9]", "");
-    }
-    
-    public static boolean writeToDatabase(String DBName, String data) {
+    public static boolean writeToDatabase(String DBName, String[][] data) {
 //
 //        try (callDatabase(nameNewTableInDatabase(databaseAddress, DBName))) {
 //
