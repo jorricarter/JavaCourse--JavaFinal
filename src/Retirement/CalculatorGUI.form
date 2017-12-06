@@ -342,7 +342,7 @@
               <text value="Save"/>
             </properties>
           </component>
-          <scrollpane id="875c7">
+          <scrollpane id="875c7" binding="scrollTableField">
             <constraints>
               <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false">
                 <preferred-size width="1000" height="16"/>
@@ -351,14 +351,20 @@
             <properties>
               <enabled value="true"/>
               <foreground color="-10263709"/>
+              <opaque value="false"/>
             </properties>
             <border type="none"/>
             <children>
               <component id="6fb10" class="javax.swing.JTable" binding="retirementTable">
                 <constraints/>
                 <properties>
-                  <foreground color="-10790053"/>
+                  <font name="Arial"/>
+                  <foreground color="-16777216"/>
+                  <opaque value="false"/>
                   <preferredScrollableViewportSize width="1000" height="400"/>
+                  <rowMargin value="1"/>
+                  <selectionForeground color="-7368044"/>
+                  <showVerticalLines value="true"/>
                   <toolTipText value=""/>
                 </properties>
               </component>

@@ -8,7 +8,7 @@ public class DataProcessor {
     //for accessing other classes
     private final DatabaseIO IO = new DatabaseIO();
     private final RetirementCalculatorProgram Program = new RetirementCalculatorProgram();
-    private final TableGenerator Generate = new TableGenerator();
+    private final ToGenerator Generate = new ToGenerator();
 
 //    private String storageName = CalculatorGUI.getTitle();
 //

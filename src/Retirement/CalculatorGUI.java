@@ -3,8 +3,8 @@ package Retirement;
 /**Created by Jorri on 12/3/17. This is the final project for Java Programming class with Clara James.*/
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -28,10 +28,8 @@ public class CalculatorGUI extends JFrame{
     private JButton generateButton;
     private JTable retirementTable;
     private JButton saveButton;
+    private JScrollPane scrollTableField;
 
-    //color for items that don't update properly after Nimbus theme is applied
-    final static Color ToolTipColor = new Color(20, 80, 120);
-    final static Color RowColor = new Color(90, 150, 250);
     //Title that appears on top of form's program-window. has a get method as well.
     private final String Title = "Retirement Calculator";
     //create list to store current settings and send to method for creating table.
@@ -39,7 +37,7 @@ public class CalculatorGUI extends JFrame{
     //data for initializing blank-ish table
     private final String[] ColumnHeadings = {"Age", "Required", "Savings", "Needed", "Percent"};
     //edit this model to update table
-    DefaultTableModel tableModel = new DefaultTableModel(ColumnHeadings,100);
+    private DefaultTableModel tableModel = new DefaultTableModel(ColumnHeadings,100);
 
     //get/set methods for getting or setting values. Only provide what's necessary
 //THIS DOUBLES AS AN OVERRIDE AND A GET METHOD. THE OVERRIDE NAMES THE JFRAME AND WHEN THE METHOD IS CALLED BY OTHER CLASSES, IT WILL RETURN THE NAME OF THE CALCULATOR.
@@ -49,16 +47,21 @@ public class CalculatorGUI extends JFrame{
     }
 
     CalculatorGUI() {
+        //color for items that don't update properly after Nimbus theme is applied
+        final Color ToolTipColor = new Color(20, 80, 120);
+        final Color RowColor = new Color(90, 150, 250);
         retirementTable.setModel(tableModel);
+        retirementTable.setShowGrid(true);
+        retirementTable.setGridColor(Color.black);
+        //ONLY 98% WORKING, BUT AT LEAST TOOLTIP ISN'T YELLOW ANYMORE
+        UIManager.put("ToolTip[Enabled].backgroundPainter", ToolTipColor);
+        UIManager.put("ToolTip[Enabled].background", ToolTipColor);
+        UIManager.put("Table.alternateRowColor", RowColor);
         setContentPane(mainPanel);
         setPreferredSize(new Dimension(800, 600));
         pack();
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
-//ONLY KIND-OF WORKING, BUT AT LEAST TOOLTIP ISN'T YELLOW ANYMORE
-        UIManager.put("ToolTip[Enabled].backgroundPainter", ToolTipColor);
-        UIManager.put("ToolTip[Enabled].background", ToolTipColor);
-        UIManager.put("Table.alternateRowColor", RowColor);
 
         //what to do when 'Load Previous Data' is clicked.
         loadButton.addActionListener(new ActionListener() {
@@ -90,8 +93,17 @@ public class CalculatorGUI extends JFrame{
                     calculatorData.add(mortgageField.getText());
                     //feed calculatorData to processor to get table of what will fill retirementTable
 //                    String dataString = (calculatorData);
-                    //display string in preview
-//                    retirementTable.setText(dataString);
+                    //display data in view
+                    String[] data = {"a", "s", "d", "f", "g"};
+                    String[][] jTableData = {data, data, data, data, data};
+                    createTable(jTableData);
+                    tableModel.setValueAt("hello", 0,0);
+                    retirementTable.setModel(tableModel);
+                    final DefaultTableCellRenderer jTableAlignment = new DefaultTableCellRenderer();
+                    jTableAlignment.setHorizontalAlignment(JLabel.RIGHT);
+                    for (int i = 0; i < ColumnHeadings.length; i++) {
+                        retirementTable.getColumnModel().getColumn(i).setCellRenderer( jTableAlignment );
+                    }
                 }
             }
         });
@@ -109,8 +121,14 @@ public class CalculatorGUI extends JFrame{
     }
 
     private void createTable(String[][] tableData) {
+        final DefaultTableCellRenderer jTableAlignment = new DefaultTableCellRenderer();
+        jTableAlignment.setHorizontalAlignment(JLabel.RIGHT);
         tableModel = new DefaultTableModel(tableData, ColumnHeadings);
+        for (int i = 0; i < ColumnHeadings.length; i++) {
+            retirementTable.getColumnModel().getColumn(i).setCellRenderer( jTableAlignment );
+        }
     }
+
     private void showMessage(String message, String title, int type) {
         JOptionPane.showMessageDialog(this, message, title, type);
     }
