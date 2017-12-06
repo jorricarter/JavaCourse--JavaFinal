@@ -8,7 +8,6 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 
 public class CalculatorGUI extends JFrame{
     private JPanel mainPanel;
@@ -33,13 +32,10 @@ public class CalculatorGUI extends JFrame{
     //Title that appears on top of form's program-window. has a get method as well.
     private final String Title = "Retirement Calculator";
     //create list to store current settings and send to method for creating table.
-    private ArrayList<String> calculatorData = new ArrayList<>();
-    //data for initializing blank-ish table
+    private String[] calculatorData;
+    //FINAL column headings
     private final String[] ColumnHeadings = {"Age", "Required", "Savings", "Needed", "Percent"};
-    //edit this model to update table
-    private DefaultTableModel tableModel = new DefaultTableModel(ColumnHeadings,100);
 
-    //get/set methods for getting or setting values. Only provide what's necessary
 //THIS DOUBLES AS AN OVERRIDE AND A GET METHOD. THE OVERRIDE NAMES THE JFRAME AND WHEN THE METHOD IS CALLED BY OTHER CLASSES, IT WILL RETURN THE NAME OF THE CALCULATOR.
     @Override
     public String getTitle() {
@@ -50,13 +46,18 @@ public class CalculatorGUI extends JFrame{
         //color for items that don't update properly after Nimbus theme is applied
         final Color ToolTipColor = new Color(20, 80, 120);
         final Color RowColor = new Color(90, 150, 250);
-        retirementTable.setModel(tableModel);
+        //formatter to align numbers to the right. Makes more sense for this kind of app
+        DefaultTableCellRenderer jTableAlignment = new DefaultTableCellRenderer();
+        jTableAlignment.setHorizontalAlignment(JLabel.RIGHT);
+        //creates empty table so form isn't blank
+        createTable(new String[100][5], jTableAlignment);
+        //sets up grid because grid doesn't appear properly with this style
         retirementTable.setShowGrid(true);
         retirementTable.setGridColor(Color.black);
-        //ONLY 98% WORKING, BUT AT LEAST TOOLTIP ISN'T YELLOW ANYMORE
-        UIManager.put("ToolTip[Enabled].backgroundPainter", ToolTipColor);
+//FOUND THESE FROM EXPERIMENTING AND PURE LUCK
         UIManager.put("ToolTip[Enabled].background", ToolTipColor);
         UIManager.put("Table.alternateRowColor", RowColor);
+        //start the actual GUI.
         setContentPane(mainPanel);
         setPreferredSize(new Dimension(800, 600));
         pack();
@@ -83,31 +84,19 @@ public class CalculatorGUI extends JFrame{
                 //necessary data isn't blank {display table}
                 }else {
                     //put data from calculator into a list to be sent to DataProcessor for processing.
-                    calculatorData.add(ageField.getText());
-                    calculatorData.add(lifeField.getText());
-                    calculatorData.add(incrementField.getText());
-                    calculatorData.add(savingsField.getText());
-                    calculatorData.add(incomeField.getText());
-                    calculatorData.add(annualField.getText());
-                    calculatorData.add(retirementField.getText());
-                    calculatorData.add(mortgageField.getText());
+                    calculatorData = new String[] {
+                            ageField.getText(), lifeField.getText(), incrementField.getText(), savingsField.getText(),
+                            incomeField.getText(), annualField.getText(), retirementField.getText(), mortgageField.getText()
+                    };
                     //feed calculatorData to processor to get table of what will fill retirementTable
 //                    String dataString = (calculatorData);
-                    //display data in view
+//FOR TESTING PURPOSES ONLY
                     String[] data = {"a", "s", "d", "f", "g"};
                     String[][] jTableData = {data, data, data, data, data};
-                    createTable(jTableData);
-                    tableModel.setValueAt("hello", 0,0);
-                    retirementTable.setModel(tableModel);
-                    final DefaultTableCellRenderer jTableAlignment = new DefaultTableCellRenderer();
-                    jTableAlignment.setHorizontalAlignment(JLabel.RIGHT);
-                    for (int i = 0; i < ColumnHeadings.length; i++) {
-                        retirementTable.getColumnModel().getColumn(i).setCellRenderer( jTableAlignment );
-                    }
+                    createTable(jTableData, jTableAlignment);
                 }
             }
         });
-
         //what to do when 'saveInvoice' button is clicked
         saveButton.addActionListener(new ActionListener() {
             @Override
@@ -120,10 +109,8 @@ public class CalculatorGUI extends JFrame{
         });
     }
 
-    private void createTable(String[][] tableData) {
-        final DefaultTableCellRenderer jTableAlignment = new DefaultTableCellRenderer();
-        jTableAlignment.setHorizontalAlignment(JLabel.RIGHT);
-        tableModel = new DefaultTableModel(tableData, ColumnHeadings);
+    private void createTable(String[][] tableData, DefaultTableCellRenderer jTableAlignment) {
+        retirementTable.setModel(new DefaultTableModel(tableData, ColumnHeadings));
         for (int i = 0; i < ColumnHeadings.length; i++) {
             retirementTable.getColumnModel().getColumn(i).setCellRenderer( jTableAlignment );
         }

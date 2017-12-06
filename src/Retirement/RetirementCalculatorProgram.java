@@ -20,6 +20,7 @@ import javax.swing.*;
 //TODO have load button tell processor to extract data from database
 //TODO validate user input to not be blank and to be within ranges; manage floats.
 //TODO make sure parse ints work from text like $ and ,
+//TODO delete old comments and fix warnings in code
 //TODO add comments to complicated parts
 //TODO include instructions on how to prep database for this application
 
