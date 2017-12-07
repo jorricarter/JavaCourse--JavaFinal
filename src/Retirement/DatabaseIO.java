@@ -1,20 +1,25 @@
 package Retirement;
 
-import static Retirement.DataProcessor.Proc;
+/*
+ * Created by Jorri Carter on 12/3/17.
+ * This is the final project for
+ * Java Programming class with Clara James.
+ * */
 
-/**Created by Jorri on 12/3/17. This is the final project for Java Programming class with Clara James.*/
+import static Retirement.DataProcessor.Proc;
 
 public class DatabaseIO {
     //keep track of number of databases for naming scheme(name followed by number of databases)(only saves 10)
     private static int databaseQuant = 0;
 
-    public static String nameDatabase() {
+    static String nameDatabase() {
         String name = String.format("%s_database"+databaseQuant, Proc.getTitle());
         databaseQuant++;
         return name;
     }
 
-    public static boolean writeToDatabase(String DBName, String[][] data) {
+
+    static boolean writeToDatabase(String DBName, String[][] data) {
 //
 //        try (callDatabase(nameNewTableInDatabase(databaseAddress, DBName))) {
 //

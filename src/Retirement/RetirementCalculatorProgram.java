@@ -1,10 +1,14 @@
 package Retirement;
 
-/**Created by Jorri on 12/3/17. This is the final project for Java Programming class with Clara James.*/
+/*
+ * Created by Jorri Carter on 12/3/17.
+ * This is the final project for
+ * Java Programming class with Clara James.
+ * */
 
 import static Retirement.DataProcessor.Proc;
 
-//TODO how to convert data from GUI inputs to JTable (ToGenerator)
+//TODO convert data from GUI inputs to JTable (ToGenerator)
 //TODO install database
 //TODO how to create database (can java do it or does it need to be prepped)
 //TODO how to check for if a database exists (DatabaseIO.dataExists(title))
