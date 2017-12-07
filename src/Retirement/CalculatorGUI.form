@@ -251,7 +251,7 @@
               <horizontalAlignment value="4"/>
               <selectedTextColor color="-10526881"/>
               <text value="$6,000"/>
-              <toolTipText value="How much do you contribute towards your savings each year?"/>
+              <toolTipText value="How much would you contribute towards your savings each year?"/>
             </properties>
           </component>
           <component id="56b33" class="javax.swing.JTextField" binding="retirementField">

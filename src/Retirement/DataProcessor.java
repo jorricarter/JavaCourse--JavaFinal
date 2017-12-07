@@ -41,13 +41,16 @@ class DataProcessor {
             UIManager.setLookAndFeel(GUIStyle);
             //if nimbus isn't found, don't crash. Let me know why my program now looks strange.
         } catch (Exception e) {
-            gui.showMessage("Nimbus style could not be loaded. App may look strange, but should function normally.", "Default style could not be found.", 1);
+            gui.alertUser("Nimbus style could not be loaded. App may look strange, but should function normally.", "Default style could not be found.", 1);
         }
     }
 
     double[] accountInputArrayToDoubleArray(String[] accountInputArray) {
             return To.accountInputArrayToDoubleArray(accountInputArray);
     }
+
+    String doubleToString(int decimalPlaces, double value) {return To.doubleToString(decimalPlaces, value);}
+
 
     String getTitle() {
        return gui.getTitle();

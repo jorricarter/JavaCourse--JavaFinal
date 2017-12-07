@@ -25,6 +25,8 @@ import static Retirement.DataProcessor.Proc;
 //TODO delete old comments and fix warnings in code
 //TODO add comments to complicated parts
 //TODO include instructions on how to prep database for this application
+//TODO tidy up code and delete cluttering comments
+//TODO maybe loosen up CalculatorGUI.validateInput()
 
 class RetirementCalculatorProgram {
 
