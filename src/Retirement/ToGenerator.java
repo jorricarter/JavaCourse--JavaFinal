@@ -6,6 +6,9 @@ package Retirement;
  * Java Programming class with Clara James.
  * */
 
+import java.text.DecimalFormat;
+import java.util.Locale;
+
 class ToGenerator {
 
 
@@ -32,5 +35,10 @@ class ToGenerator {
 
 
     String doubleToString(int decimalPlaces, double value) {return String.format("%."+decimalPlaces+"f", value);}
+
+
+    String doubleToAccountString(double value){
+        return DecimalFormat.getCurrencyInstance(Locale.US).format(value);
+    }
 }
 

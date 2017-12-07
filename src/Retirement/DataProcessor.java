@@ -30,7 +30,6 @@ class DataProcessor {
 //FOUND THESE FROM EXPERIMENTING AND PURE LUCK
         UIManager.put("ToolTip[Enabled].background", ToolTipColor);
         UIManager.put("Table.alternateRowColor", RowColor);
-        UIManager.put("Table.gridColor", Color.BLACK);
     }
 
     //styles the gui
@@ -49,12 +48,16 @@ class DataProcessor {
             return To.accountInputArrayToDoubleArray(accountInputArray);
     }
 
-    String doubleToString(int decimalPlaces, double value) {return To.doubleToString(decimalPlaces, value);}
+    String doubleToAccountString(double value) {return To.doubleToAccountString(value);}
 
 
     String getTitle() {
        return gui.getTitle();
     }
+
+
+    String doubleToString(int decimalPlaces, double value) {return To.doubleToString(decimalPlaces, value);}
+
 
 //    private String storageName = CalculatorGUI.getTitle();
 //

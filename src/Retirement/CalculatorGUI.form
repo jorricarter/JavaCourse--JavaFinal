@@ -3,13 +3,12 @@
   <grid id="27dc6" binding="mainPanel" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="10" left="10" bottom="10" right="10"/>
     <constraints>
-      <xy x="20" y="20" width="641" height="400"/>
+      <xy x="20" y="20" width="1063" height="400"/>
     </constraints>
     <properties>
       <background color="-15066082"/>
       <foreground color="-16744193"/>
       <name value="Retirement Calculator"/>
-      <toolTipText value=""/>
     </properties>
     <border type="line" title="Retirement Calculator">
       <title-color color="-16744193"/>
@@ -19,7 +18,7 @@
       <grid id="b04cb" binding="dataEntryPanel" layout-manager="GridLayoutManager" row-count="10" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="10" left="10" bottom="10" right="10"/>
         <constraints>
-          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false">
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="1" anchor="0" fill="3" indent="0" use-parent-layout="false">
             <preferred-size width="320" height="150"/>
           </grid>
         </constraints>
@@ -66,6 +65,7 @@
             <constraints>
               <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
                 <preferred-size width="90" height="-1"/>
+                <maximum-size width="90" height="-1"/>
               </grid>
             </constraints>
             <properties>
@@ -76,7 +76,7 @@
               <font name="Arial"/>
               <foreground color="-15066082"/>
               <horizontalAlignment value="4"/>
-              <selectedTextColor color="-10526881"/>
+              <selectedTextColor color="-12105899"/>
               <text value="100"/>
               <toolTipText value="It is better to put later in case you live longer than expected!"/>
             </properties>
@@ -85,6 +85,7 @@
             <constraints>
               <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
                 <preferred-size width="90" height="-1"/>
+                <maximum-size width="90" height="-1"/>
               </grid>
             </constraints>
             <properties>
@@ -95,7 +96,7 @@
               <font name="Arial"/>
               <foreground color="-15066082"/>
               <horizontalAlignment value="4"/>
-              <selectedTextColor color="-10526881"/>
+              <selectedTextColor color="-12105899"/>
               <text value="1"/>
               <toolTipText value="If you want to only see your statistics for every 5 years, put 5."/>
             </properties>
@@ -182,6 +183,7 @@
             <constraints>
               <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
                 <preferred-size width="90" height="-1"/>
+                <maximum-size width="90" height="-1"/>
               </grid>
             </constraints>
             <properties>
@@ -192,7 +194,7 @@
               <font name="Arial"/>
               <foreground color="-15066082"/>
               <horizontalAlignment value="4"/>
-              <selectedTextColor color="-10526881"/>
+              <selectedTextColor color="-12105899"/>
               <text value="28"/>
               <toolTipText value="How old are you?"/>
             </properties>
@@ -201,6 +203,7 @@
             <constraints>
               <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
                 <preferred-size width="90" height="-1"/>
+                <maximum-size width="90" height="-1"/>
               </grid>
             </constraints>
             <properties>
@@ -211,7 +214,7 @@
               <font name="Arial"/>
               <foreground color="-15066082"/>
               <horizontalAlignment value="4"/>
-              <selectedTextColor color="-10526881"/>
+              <selectedTextColor color="-12105899"/>
               <text value="$20,000"/>
               <toolTipText value="How much money do you have in your savings account right now? Can I have some?"/>
             </properties>
@@ -220,6 +223,7 @@
             <constraints>
               <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
                 <preferred-size width="90" height="-1"/>
+                <maximum-size width="90" height="-1"/>
               </grid>
             </constraints>
             <properties>
@@ -230,7 +234,7 @@
               <font name="Arial"/>
               <foreground color="-15066082"/>
               <horizontalAlignment value="4"/>
-              <selectedTextColor color="-10526881"/>
+              <selectedTextColor color="-12105899"/>
               <text value="$60,000"/>
               <toolTipText value="What is your salary or net income?"/>
             </properties>
@@ -239,6 +243,7 @@
             <constraints>
               <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
                 <preferred-size width="90" height="-1"/>
+                <maximum-size width="90" height="-1"/>
               </grid>
             </constraints>
             <properties>
@@ -249,7 +254,7 @@
               <font name="Arial"/>
               <foreground color="-15066082"/>
               <horizontalAlignment value="4"/>
-              <selectedTextColor color="-10526881"/>
+              <selectedTextColor color="-12105899"/>
               <text value="$6,000"/>
               <toolTipText value="How much would you contribute towards your savings each year?"/>
             </properties>
@@ -258,6 +263,7 @@
             <constraints>
               <grid row="7" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
                 <preferred-size width="90" height="-1"/>
+                <maximum-size width="90" height="-1"/>
               </grid>
             </constraints>
             <properties>
@@ -268,7 +274,7 @@
               <font name="Arial"/>
               <foreground color="-15066082"/>
               <horizontalAlignment value="4"/>
-              <selectedTextColor color="-10526881"/>
+              <selectedTextColor color="-12105899"/>
               <text value="$45,000"/>
               <toolTipText value="How much do you want your salary to be when you retire?"/>
             </properties>
@@ -277,6 +283,7 @@
             <constraints>
               <grid row="8" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
                 <preferred-size width="90" height="-1"/>
+                <maximum-size width="90" height="-1"/>
               </grid>
             </constraints>
             <properties>
@@ -287,7 +294,7 @@
               <font name="Arial"/>
               <foreground color="-15066082"/>
               <horizontalAlignment value="4"/>
-              <selectedTextColor color="-10526881"/>
+              <selectedTextColor color="-12105899"/>
               <text value="$300,000"/>
               <toolTipText value="How much will your retirement house cost minus any amounts you have paid towards current mortgages?"/>
             </properties>
@@ -344,8 +351,9 @@
           </component>
           <scrollpane id="875c7">
             <constraints>
-              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                <preferred-size width="1000" height="16"/>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="6" anchor="0" fill="3" indent="2" use-parent-layout="false">
+                <minimum-size width="450" height="-1"/>
+                <preferred-size width="450" height="16"/>
               </grid>
             </constraints>
             <properties>
@@ -358,14 +366,15 @@
               <component id="6fb10" class="javax.swing.JTable" binding="retirementTable">
                 <constraints/>
                 <properties>
+                  <background color="-13156543"/>
                   <font name="Arial"/>
                   <foreground color="-16777216"/>
                   <opaque value="false"/>
                   <preferredScrollableViewportSize width="1000" height="400"/>
                   <rowMargin value="1"/>
                   <selectionForeground color="-7368044"/>
+                  <showHorizontalLines value="true"/>
                   <showVerticalLines value="true"/>
-                  <toolTipText value=""/>
                 </properties>
               </component>
             </children>

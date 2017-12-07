@@ -103,22 +103,21 @@ public class CalculatorGUI extends JFrame{
 
 
     private String[][] retirementDataGenerator(double[] doubleInputs) {
-//ONLY IN HERE TO HELP TEACHER TRACE FORMULAS WHEN DECIPHERING WHICH INDEXES LEAD TO WHICH INPUT BOXES.
+        //ONLY IN HERE TO HELP TEACHER TRACE FORMULAS WHEN DECIPHERING WHICH INDEXES LEAD TO WHICH INPUT BOXES.
         double age = doubleInputs[0], life = doubleInputs[1], inc = doubleInputs[2], save = doubleInputs[3], annual = doubleInputs[5], retire = doubleInputs[6], mort = doubleInputs[7];
-//if input is invalid, this array will calculate as requiring 0 rows(blank table with columns and design)
+        //if input is invalid, this array will calculate as requiring 0 rows(blank table with columns and design)
         if (!validateInput(age, life, inc, annual, retire)) life=inc=age=1;
         //I KNOW THIS PART MIGHT BE DIFFICULT TO FOLLOW, BUT I TRIED TO MAKE IT LOOK ORGANIZED
         Retirement2dData = new String[(int)((life-age)/inc)][ColumnHeadings.length];
-//FOR LOOP BASED ON VARIABLES INPUT INTO TEXTFIELDS.
+        //FOR LOOP BASED ON VARIABLES INPUT INTO TEXTFIELDS.
         for (int i = 0; i < Retirement2dData.length; age += inc, i++) {
-            String[] currentData = Retirement2dData[(int)age-(int)i];
-            currentData[0] = Proc.doubleToString((int)2.0", age);
-            currentData[1] = String.format ("%.2f", age);
+            String[] currentData = Retirement2dData[i];
+            currentData[0] = Proc.doubleToString(2, age);
+            currentData[1] = Proc.doubleToAccountString(retire*(life-age)+mort);
             currentData[2] = String.format ("%.2f", age);
             currentData[3] = String.format ("%.2f", age);
             currentData[4] = String.format ("%.2f", age);
         }
-//TODO convert doubles to Strings
         return Retirement2dData;
     }
 
@@ -137,7 +136,7 @@ public class CalculatorGUI extends JFrame{
     private void createJTable(String[][] tableData, DefaultTableCellRenderer jTableAlignment) {
         retirementTable.setModel(new DefaultTableModel(tableData, ColumnHeadings));
         for (int i = 0; i < ColumnHeadings.length; i++) {
-            retirementTable.getColumnModel().getColumn(i).setCellRenderer( jTableAlignment );
+//            retirementTable.getColumnModel().getColumn(i).setCellRenderer( jTableAlignment );
         }
     }
 }
