@@ -24,12 +24,6 @@ class DataProcessor {
     void startProgram() {
         styleGUI();
         gui = new CalculatorGUI();
-        //color for items that don't update properly after Nimbus theme is applied
-        final Color ToolTipColor = new Color(20, 80, 120);
-        final Color RowColor = new Color(90, 150, 250);
-//FOUND THESE FROM EXPERIMENTING AND PURE LUCK
-        UIManager.put("ToolTip[Enabled].background", ToolTipColor);
-        UIManager.put("Table.alternateRowColor", RowColor);
     }
 
     //styles the gui

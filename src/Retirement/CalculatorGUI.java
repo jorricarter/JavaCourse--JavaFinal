@@ -56,9 +56,16 @@ public class CalculatorGUI extends JFrame{
         createJTable(Retirement2dData, jTableAlignment);
         //sets up grid because grid doesn't appear properly with this style
         retirementTable.setShowGrid(true);
-        //start the actual GUI.
+        //color for items that don't update properly after Nimbus theme is applied
+        final Color ToolTipColor = new Color(20, 80, 120);
+        final Color RowColor = new Color(90, 150, 250);
+//FOUND THESE FROM EXPERIMENTING AND PURE LUCK
+        UIManager.put("ToolTip[Enabled].background", ToolTipColor);
+        UIManager.put("ToolTip[Enabled].background", Color.RED);
+        UIManager.put("Table.alternateRowColor", RowColor);
+//start the actual GUI.
         setContentPane(mainPanel);
-        setPreferredSize(new Dimension(1000, 600));
+        setPreferredSize(new Dimension(950, 600));
         pack();
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
@@ -135,7 +142,7 @@ public class CalculatorGUI extends JFrame{
     private void createJTable(String[][] tableData, DefaultTableCellRenderer jTableAlignment) {
         retirementTable.setModel(new DefaultTableModel(tableData, ColumnHeadings));
         for (int i = 0; i < ColumnHeadings.length; i++) {
-//            retirementTable.getColumnModel().getColumn(i).setCellRenderer( jTableAlignment );
+            retirementTable.getColumnModel().getColumn(i).setCellRenderer(jTableAlignment);
         }
     }
 }

@@ -339,7 +339,7 @@
           </component>
           <component id="884" class="javax.swing.JButton" binding="saveButton">
             <constraints>
-              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="2" use-parent-layout="false">
                 <preferred-size width="234" height="32"/>
               </grid>
             </constraints>
@@ -366,6 +366,9 @@
               <component id="6fb10" class="javax.swing.JTable" binding="retirementTable">
                 <constraints/>
                 <properties>
+                  <alignmentX value="0.5"/>
+                  <autoCreateColumnsFromModel value="true"/>
+                  <autoResizeMode value="2"/>
                   <background color="-13156543"/>
                   <font name="Arial"/>
                   <foreground color="-16777216"/>
