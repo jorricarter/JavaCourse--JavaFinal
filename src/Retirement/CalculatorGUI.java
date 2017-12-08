@@ -26,7 +26,7 @@ public class CalculatorGUI extends JFrame{
     private JTextField incomeField;
     private JTextField annualField;
     private JTextField retirementField;
-    private JTextField mortgageField;
+    private JTextField debtField;
     private JButton loadButton;
     private JButton generateButton;
 
@@ -58,7 +58,7 @@ public class CalculatorGUI extends JFrame{
         retirementTable.setShowGrid(true);
         //start the actual GUI.
         setContentPane(mainPanel);
-        setPreferredSize(new Dimension(800, 600));
+        setPreferredSize(new Dimension(1000, 600));
         pack();
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
@@ -97,14 +97,14 @@ public class CalculatorGUI extends JFrame{
     private String[] getAllTextFields() {
 
         return new String[] {ageField.getText(), lifeField.getText(), incrementField.getText(), savingsField.getText(),
-                            incomeField.getText(), annualField.getText(), retirementField.getText(), mortgageField.getText()
+                            incomeField.getText(), annualField.getText(), retirementField.getText(), debtField.getText()
         };
     }
 
 
     private String[][] retirementDataGenerator(double[] doubleInputs) {
         //ONLY IN HERE TO HELP TEACHER TRACE FORMULAS WHEN DECIPHERING WHICH INDEXES LEAD TO WHICH INPUT BOXES.
-        double age = doubleInputs[0], life = doubleInputs[1], inc = doubleInputs[2], save = doubleInputs[3], annual = doubleInputs[5], retire = doubleInputs[6], mort = doubleInputs[7];
+        double age = doubleInputs[0], life = doubleInputs[1], inc = doubleInputs[2], save = doubleInputs[3], annual = doubleInputs[5], retire = doubleInputs[6], debt = doubleInputs[7];
         //if input is invalid, this array will calculate as requiring 0 rows(blank table with columns and design)
         if (!validateInput(age, life, inc, annual, retire)) life=inc=age=1;
         //I KNOW THIS PART MIGHT BE DIFFICULT TO FOLLOW, BUT I TRIED TO MAKE IT LOOK ORGANIZED
@@ -113,7 +113,7 @@ public class CalculatorGUI extends JFrame{
         for (int i = 0; i < Retirement2dData.length; age += inc, i++) {
             String[] currentData = Retirement2dData[i];
             currentData[0] = Proc.doubleToString(2, age);
-            currentData[1] = Proc.doubleToAccountString(retire*(life-age)+mort);
+            currentData[1] = Proc.doubleToAccountString(retire*(life-age)+debt);
             currentData[2] = String.format ("%.2f", age);
             currentData[3] = String.format ("%.2f", age);
             currentData[4] = String.format ("%.2f", age);
@@ -123,11 +123,10 @@ public class CalculatorGUI extends JFrame{
 
 
     private Boolean validateInput(double age, double life, double inc, double annual, double retire){
-        //if (valid) {return true;}
-        if (age < life && inc > 0 && annual > 0 && retire > 0) return true;
-
+        //if (valid) {return true;}                           this last value checks
+        if (age < life && inc > 0 && annual > 0 && (int)(life-age)/inc < 20000) return true;
         //if input is impossible to calculate, alert user
-        alertUser("The data you provided is impossible to calculate into a retirement plan.", "Unable to calculate impossible equations!", 0);
+        alertUser("The data you provided is invalid. Please choose more realistic parameters.", "Unable to calculate impossible equations!", 0);
         return false;
 
     }

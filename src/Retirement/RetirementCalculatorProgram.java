@@ -8,7 +8,7 @@ package Retirement;
 
 import static Retirement.DataProcessor.Proc;
 
-//todo accountformat, cell/windowwidth, align, size columnDefault, remove other styling code, color headers and scrollbar, alternate rows
+//todo cell/windowwidth, align, size columnDefault, remove other styling code, color headers and scrollbar, alternate rows
 //TODO get column to fit the numbers
 //TODO convert data from GUI inputs to JTable (ToGenerator)
 //TODO install database
