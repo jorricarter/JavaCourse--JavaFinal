@@ -7,7 +7,6 @@ package Retirement;
  * */
 
 import javax.swing.*;
-import java.awt.*;
 
 class DataProcessor {
     //grant all classes access to dataProcessor. Only way classes communicate with each other.(modular structure)
@@ -23,7 +22,8 @@ class DataProcessor {
     //styles the gui and starts it
     void startProgram() {
         styleGUI();
-        gui = new CalculatorGUI();
+//        gui = new CalculatorGUI();
+        newForm newFrom = new newForm();
     }
 
     //styles the gui

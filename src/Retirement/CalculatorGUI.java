@@ -61,7 +61,6 @@ public class CalculatorGUI extends JFrame{
         final Color RowColor = new Color(90, 150, 250);
 //FOUND THESE FROM EXPERIMENTING AND PURE LUCK
         UIManager.put("ToolTip[Enabled].background", ToolTipColor);
-        UIManager.put("ToolTip[Enabled].background", Color.RED);
         UIManager.put("Table.alternateRowColor", RowColor);
 //start the actual GUI.
         setContentPane(mainPanel);

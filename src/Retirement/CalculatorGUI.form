@@ -76,6 +76,7 @@
               <font name="Arial"/>
               <foreground color="-15066082"/>
               <horizontalAlignment value="4"/>
+              <opaque value="false"/>
               <selectedTextColor color="-12105899"/>
               <text value="100"/>
               <toolTipText value="It is better to put later in case you live longer than expected!"/>
@@ -96,6 +97,7 @@
               <font name="Arial"/>
               <foreground color="-15066082"/>
               <horizontalAlignment value="4"/>
+              <opaque value="false"/>
               <selectedTextColor color="-12105899"/>
               <text value="1"/>
               <toolTipText value="If you want to only see your statistics for every 5 years, put 5."/>
@@ -194,6 +196,7 @@
               <font name="Arial"/>
               <foreground color="-15066082"/>
               <horizontalAlignment value="4"/>
+              <opaque value="false"/>
               <selectedTextColor color="-12105899"/>
               <text value="28"/>
               <toolTipText value="How old are you?"/>
@@ -214,6 +217,7 @@
               <font name="Arial"/>
               <foreground color="-15066082"/>
               <horizontalAlignment value="4"/>
+              <opaque value="false"/>
               <selectedTextColor color="-12105899"/>
               <text value="$20,000"/>
               <toolTipText value="How much money do you have in your savings account right now? Can I have some?"/>
@@ -234,6 +238,7 @@
               <font name="Arial"/>
               <foreground color="-15066082"/>
               <horizontalAlignment value="4"/>
+              <opaque value="false"/>
               <selectedTextColor color="-12105899"/>
               <text value="$60,000"/>
               <toolTipText value="What is your salary or net income?"/>
@@ -254,6 +259,7 @@
               <font name="Arial"/>
               <foreground color="-15066082"/>
               <horizontalAlignment value="4"/>
+              <opaque value="false"/>
               <selectedTextColor color="-12105899"/>
               <text value="$6,000"/>
               <toolTipText value="How much would you contribute towards your savings each year?"/>
@@ -274,6 +280,7 @@
               <font name="Arial"/>
               <foreground color="-15066082"/>
               <horizontalAlignment value="4"/>
+              <opaque value="false"/>
               <selectedTextColor color="-12105899"/>
               <text value="$45,000"/>
               <toolTipText value="How much do you want your salary to be when you retire?"/>
@@ -294,6 +301,7 @@
               <font name="Arial"/>
               <foreground color="-15066082"/>
               <horizontalAlignment value="4"/>
+              <opaque value="false"/>
               <selectedTextColor color="-12105899"/>
               <text value="$300,000"/>
               <toolTipText value="How much do you or will you owe in loans/mortgages?"/>
