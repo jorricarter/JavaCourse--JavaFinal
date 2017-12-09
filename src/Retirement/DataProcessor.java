@@ -20,11 +20,7 @@ class DataProcessor {
     private CalculatorGUI Gui;
     //what style the GUI will use
     private final static String GUIStyle = "javax.swing.plaf.nimbus.NimbusLookAndFeel";
-    private final static String WritePath = "jdbc:sqlite:C:/Program Files/SQLite/db/";
-
-    final String getWritePath() {
-        return WritePath;
-    }
+    private final static String WritePath = "jdbc:sqlite:C://Program Files/SQLite/db/";
 
     //styles the Gui and starts it
     void startProgram() {
@@ -71,9 +67,15 @@ class DataProcessor {
     }
 
 
-
     //In future implementation, I will overload this method to optionally accept filepath and name;
-    void writeDatabase(String[][] table) {IO.writeDatabase(WritePath, nameDatabaseUnique(), table);}
+    void writeDatabase(String[][] table) {
+        IO.writeDatabase(WritePath, nameDatabaseUnique(), table);
+    }
+
+
+//    final String getSQLitePath() {
+//        return SQLitePavement+WritePath;
+//    }
 
 
 //future implementations would allow users to choose the name.

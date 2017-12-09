@@ -14,7 +14,6 @@ import static Retirement.DataProcessor.Proc;
 //TODO how to create database table (DatabaseIO)
 //TODO how to put data into database table (DatabaseIO)
 //TODO how to get data from database table (DatabaseIO)
-//TODO how to insert data into JTable (CalculatorGUI.createTable)
 //TODO how to convert from database format to JTable format (ToGenerator)
 //TODO have load button tell processor to extract data from database
 //TODO validate user input to not be blank and to be within ranges; manage floats.
@@ -31,5 +30,8 @@ import static Retirement.DataProcessor.Proc;
 class RetirementCalculatorProgram {
     public static void main(String[] args) {
         Proc.startProgram();
+        DatabaseIO IO = new DatabaseIO();
+        IO.DatabaseIO();
+        Proc.writeDatabase(new String[0][0]);
     }
 }
