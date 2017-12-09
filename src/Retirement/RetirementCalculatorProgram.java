@@ -8,9 +8,7 @@ package Retirement;
 
 import static Retirement.DataProcessor.Proc;
 
-//todo remove other styling code, color headers and scrollbar, alternate rows
-//TODO get column to fit the numbers
-//TODO convert data from GUI inputs to JTable (ToGenerator)
+//TODO use smiles (ToGenerator)
 //TODO install database
 //TODO how to create database (can java do it or does it need to be prepped)
 //TODO how to check for if a database exists (DatabaseIO.dataExists(title))
@@ -28,7 +26,7 @@ import static Retirement.DataProcessor.Proc;
 //TODO add comments to complicated parts
 //TODO include instructions on how to prep database for this application
 //TODO tidy up code and delete cluttering comments
-//TODO maybe loosen up CalculatorGUI.validateInput()
+//TODO add alternate rows
 
 class RetirementCalculatorProgram {
 

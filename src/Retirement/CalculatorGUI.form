@@ -25,6 +25,8 @@
         <properties>
           <background color="-14342819"/>
           <enabled value="false"/>
+          <opaque value="true"/>
+          <visible value="true"/>
         </properties>
         <border type="none"/>
         <children>
@@ -63,7 +65,7 @@
           </component>
           <component id="2d726" class="javax.swing.JTextField" binding="lifeField">
             <constraints>
-              <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+              <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="0" fill="0" indent="0" use-parent-layout="false">
                 <preferred-size width="90" height="-1"/>
                 <maximum-size width="90" height="-1"/>
               </grid>
@@ -76,15 +78,18 @@
               <font name="Arial"/>
               <foreground color="-15066082"/>
               <horizontalAlignment value="4"/>
-              <opaque value="false"/>
+              <margin top="0" left="0" bottom="0" right="0"/>
+              <opaque value="true"/>
+              <requestFocusEnabled value="true"/>
               <selectedTextColor color="-12105899"/>
               <text value="100"/>
               <toolTipText value="It is better to put later in case you live longer than expected!"/>
+              <verifyInputWhenFocusTarget value="true"/>
             </properties>
           </component>
           <component id="53127" class="javax.swing.JTextField" binding="incrementField">
             <constraints>
-              <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+              <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="0" fill="0" indent="0" use-parent-layout="false">
                 <preferred-size width="90" height="-1"/>
                 <maximum-size width="90" height="-1"/>
               </grid>
@@ -97,7 +102,9 @@
               <font name="Arial"/>
               <foreground color="-15066082"/>
               <horizontalAlignment value="4"/>
-              <opaque value="false"/>
+              <margin top="0" left="0" bottom="0" right="0"/>
+              <opaque value="true"/>
+              <requestFocusEnabled value="true"/>
               <selectedTextColor color="-12105899"/>
               <text value="1"/>
               <toolTipText value="If you want to only see your statistics for every 5 years, put 5."/>
@@ -183,7 +190,7 @@
           </component>
           <component id="133d9" class="javax.swing.JTextField" binding="ageField">
             <constraints>
-              <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+              <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="0" fill="0" indent="0" use-parent-layout="false">
                 <preferred-size width="90" height="-1"/>
                 <maximum-size width="90" height="-1"/>
               </grid>
@@ -196,7 +203,9 @@
               <font name="Arial"/>
               <foreground color="-15066082"/>
               <horizontalAlignment value="4"/>
-              <opaque value="false"/>
+              <margin top="0" left="0" bottom="0" right="0"/>
+              <opaque value="true"/>
+              <requestFocusEnabled value="true"/>
               <selectedTextColor color="-12105899"/>
               <text value="28"/>
               <toolTipText value="How old are you?"/>
@@ -204,7 +213,7 @@
           </component>
           <component id="47d55" class="javax.swing.JTextField" binding="savingsField">
             <constraints>
-              <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+              <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="0" fill="0" indent="0" use-parent-layout="false">
                 <preferred-size width="90" height="-1"/>
                 <maximum-size width="90" height="-1"/>
               </grid>
@@ -217,7 +226,9 @@
               <font name="Arial"/>
               <foreground color="-15066082"/>
               <horizontalAlignment value="4"/>
-              <opaque value="false"/>
+              <margin top="0" left="0" bottom="0" right="0"/>
+              <opaque value="true"/>
+              <requestFocusEnabled value="true"/>
               <selectedTextColor color="-12105899"/>
               <text value="$20,000"/>
               <toolTipText value="How much money do you have in your savings account right now? Can I have some?"/>
@@ -225,7 +236,7 @@
           </component>
           <component id="3e70c" class="javax.swing.JTextField" binding="incomeField">
             <constraints>
-              <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+              <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="0" fill="0" indent="0" use-parent-layout="false">
                 <preferred-size width="90" height="-1"/>
                 <maximum-size width="90" height="-1"/>
               </grid>
@@ -238,7 +249,9 @@
               <font name="Arial"/>
               <foreground color="-15066082"/>
               <horizontalAlignment value="4"/>
-              <opaque value="false"/>
+              <margin top="0" left="0" bottom="0" right="0"/>
+              <opaque value="true"/>
+              <requestFocusEnabled value="true"/>
               <selectedTextColor color="-12105899"/>
               <text value="$60,000"/>
               <toolTipText value="What is your salary or net income?"/>
@@ -246,7 +259,7 @@
           </component>
           <component id="bf615" class="javax.swing.JTextField" binding="annualField">
             <constraints>
-              <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+              <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="0" fill="0" indent="0" use-parent-layout="false">
                 <preferred-size width="90" height="-1"/>
                 <maximum-size width="90" height="-1"/>
               </grid>
@@ -259,7 +272,9 @@
               <font name="Arial"/>
               <foreground color="-15066082"/>
               <horizontalAlignment value="4"/>
-              <opaque value="false"/>
+              <margin top="0" left="0" bottom="0" right="0"/>
+              <opaque value="true"/>
+              <requestFocusEnabled value="true"/>
               <selectedTextColor color="-12105899"/>
               <text value="$6,000"/>
               <toolTipText value="How much would you contribute towards your savings each year?"/>
@@ -267,7 +282,7 @@
           </component>
           <component id="56b33" class="javax.swing.JTextField" binding="retirementField">
             <constraints>
-              <grid row="7" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+              <grid row="7" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="0" fill="0" indent="0" use-parent-layout="false">
                 <preferred-size width="90" height="-1"/>
                 <maximum-size width="90" height="-1"/>
               </grid>
@@ -280,7 +295,9 @@
               <font name="Arial"/>
               <foreground color="-15066082"/>
               <horizontalAlignment value="4"/>
-              <opaque value="false"/>
+              <margin top="0" left="0" bottom="0" right="0"/>
+              <opaque value="true"/>
+              <requestFocusEnabled value="true"/>
               <selectedTextColor color="-12105899"/>
               <text value="$45,000"/>
               <toolTipText value="How much do you want your salary to be when you retire?"/>
@@ -288,7 +305,7 @@
           </component>
           <component id="b6102" class="javax.swing.JTextField" binding="debtField">
             <constraints>
-              <grid row="8" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+              <grid row="8" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="0" fill="0" indent="0" use-parent-layout="false">
                 <preferred-size width="90" height="-1"/>
                 <maximum-size width="90" height="-1"/>
               </grid>
@@ -301,7 +318,9 @@
               <font name="Arial"/>
               <foreground color="-15066082"/>
               <horizontalAlignment value="4"/>
-              <opaque value="false"/>
+              <margin top="0" left="0" bottom="0" right="0"/>
+              <opaque value="true"/>
+              <requestFocusEnabled value="true"/>
               <selectedTextColor color="-12105899"/>
               <text value="$300,000"/>
               <toolTipText value="How much do you or will you owe in loans/mortgages?"/>

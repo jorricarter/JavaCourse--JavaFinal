@@ -24,10 +24,10 @@ class ToGenerator {
 
     private double accountInputToDouble(String accountInput) {
 //'0+' avoids error(conversion to double). "+." avoids out of bounds(ensures at least 2 array indexes before joining)
-        String digitString = parseDoubleCharacters(0+accountInput+".");
+        String digitString = parseDoubleCharacters(0+accountInput+"...");
         //remove second decimal and all following characters
         String[] digitSplit = digitString.split("\\.", -3);
-        return Double.parseDouble(digitSplit[0]+"."+digitSplit[1]);
+        return Double.parseDouble(digitSplit[0]+"."+digitSplit[1]+digitSplit[2]+digitSplit[3]);
     }
 
 

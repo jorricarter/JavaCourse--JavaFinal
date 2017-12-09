@@ -56,12 +56,6 @@ public class CalculatorGUI extends JFrame{
         createJTable(Retirement2dData, jTableAlignment);
         //sets up grid because grid doesn't appear properly with this style
         retirementTable.setShowGrid(true);
-        //color for items that don't update properly after Nimbus theme is applied
-        final Color ToolTipColor = new Color(20, 80, 120);
-        final Color RowColor = new Color(90, 150, 250);
-//FOUND THESE FROM EXPERIMENTING AND PURE LUCK
-        UIManager.put("ToolTip[Enabled].background", ToolTipColor);
-        UIManager.put("Table.alternateRowColor", RowColor);
 //start the actual GUI.
         setContentPane(mainPanel);
         setPreferredSize(new Dimension(950, 600));
@@ -110,27 +104,29 @@ public class CalculatorGUI extends JFrame{
 
     private String[][] retirementDataGenerator(double[] doubleInputs) {
         //ONLY IN HERE TO HELP TEACHER TRACE FORMULAS WHEN DECIPHERING WHICH INDEXES LEAD TO WHICH INPUT BOXES.
-        double age = doubleInputs[0], life = doubleInputs[1], inc = doubleInputs[2], save = doubleInputs[3], annual = doubleInputs[5], retire = doubleInputs[6], debt = doubleInputs[7];
+        double  age = doubleInputs[0], life = doubleInputs[1], inc = doubleInputs[2], save = doubleInputs[3],
+                annual = doubleInputs[5], retire = doubleInputs[6], debt = doubleInputs[7]+retire*(life-age);
         //if input is invalid, this array will calculate as requiring 0 rows(blank table with columns and design)
-        if (!validateInput(age, life, inc, annual, retire)) life=inc=age=1;
+        life = (validateInput(age, life, inc, annual))? life-age : (inc=1);
         //I KNOW THIS PART MIGHT BE DIFFICULT TO FOLLOW, BUT I TRIED TO MAKE IT LOOK ORGANIZED
-        Retirement2dData = new String[(int)((life-age)/inc)][ColumnHeadings.length];
+        Retirement2dData = new String[(int)(life/inc)][ColumnHeadings.length];
         //FOR LOOP BASED ON VARIABLES INPUT INTO TEXTFIELDS.
-        for (int i = 0; i < Retirement2dData.length; age += inc, i++) {
+        for (int i = 0; i < Retirement2dData.length; age+=inc, life-=inc, debt-=retire*inc, save+=annual*inc, i++) {
             String[] currentData = Retirement2dData[i];
             currentData[0] = Proc.doubleToString(2, age);
-            currentData[1] = Proc.doubleToAccountString(retire*(life-age)+debt);
-            currentData[2] = String.format ("%.2f", age);
-            currentData[3] = String.format ("%.2f", age);
-            currentData[4] = String.format ("%.2f", age);
+            currentData[1] = Proc.doubleToAccountString(debt);
+            currentData[2] = Proc.doubleToAccountString(save);
+//ORIGINAL FORMULA WAS '(debt + (retire * (life - (age + (inc * i)))))/(save + (annual * (inc * i)))
+            currentData[3] = Proc.doubleToAccountString(debt-save);
+            currentData[4] = (save < debt) ? Proc.doubleToString(2, save/debt*100)+"%" : "^-^";
         }
         return Retirement2dData;
     }
 
 
-    private Boolean validateInput(double age, double life, double inc, double annual, double retire){
+    private Boolean validateInput(double age, double life, double inc, double annual){
         //if (valid) {return true;}                           this last value checks
-        if (age < life && inc > 0 && annual > 0 && (int)(life-age)/inc < 20000) return true;
+        if (age < life && inc > 0 && annual > 0 && (int)(life-age)/inc < 60000) return true;
         //if input is impossible to calculate, alert user
         alertUser("The data you provided is invalid. Please choose more realistic parameters.", "Unable to calculate impossible equations!", 0);
         return false;
@@ -140,8 +136,7 @@ public class CalculatorGUI extends JFrame{
 
     private void createJTable(String[][] tableData, DefaultTableCellRenderer jTableAlignment) {
         retirementTable.setModel(new DefaultTableModel(tableData, ColumnHeadings));
-        for (int i = 0; i < ColumnHeadings.length; i++) {
-            retirementTable.getColumnModel().getColumn(i).setCellRenderer(jTableAlignment);
-        }
+//WHEN MY IF AND FOR SYNTAX DOESN'T USE BRACKETS, i FIT THEM ON ONE LINE SO IT'S PREDICTABLE AND DOESN'T LOOK LIKE FOLLOWING LINES ARE PART OF THE LOOP.
+        for (int i = 0; i < ColumnHeadings.length; i++) retirementTable.getColumnModel().getColumn(i).setCellRenderer(jTableAlignment);
     }
 }

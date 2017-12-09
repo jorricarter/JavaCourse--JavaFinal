@@ -7,6 +7,7 @@ package Retirement;
  * */
 
 import javax.swing.*;
+import java.awt.*;
 
 class DataProcessor {
     //grant all classes access to dataProcessor. Only way classes communicate with each other.(modular structure)
@@ -22,8 +23,7 @@ class DataProcessor {
     //styles the gui and starts it
     void startProgram() {
         styleGUI();
-//        gui = new CalculatorGUI();
-        newForm newFrom = new newForm();
+        gui = new CalculatorGUI();
     }
 
     //styles the gui
@@ -32,22 +32,25 @@ class DataProcessor {
         try {
             //Set it as nimbus
             UIManager.setLookAndFeel(GUIStyle);
+            //color for items that don't update properly after Nimbus theme is applied
+            final Color ToolTipColor = new Color(20, 80, 120);
+            final Color RowColor = new Color(90, 150, 250);
+//FOUND THESE FROM EXPERIMENTING AND PURE LUCK. They only work on some computers..?
+            UIManager.put("ToolTip[Enabled].background", ToolTipColor);
+            UIManager.put("Table.alternateRowColor", RowColor);
+
             //if nimbus isn't found, don't crash. Let me know why my program now looks strange.
         } catch (Exception e) {
             gui.alertUser("Nimbus style could not be loaded. App may look strange, but should function normally.", "Default style could not be found.", 1);
         }
     }
 
-    double[] accountInputArrayToDoubleArray(String[] accountInputArray) {
-            return To.accountInputArrayToDoubleArray(accountInputArray);
-    }
+    double[] accountInputArrayToDoubleArray(String[] accountInputArray) {return To.accountInputArrayToDoubleArray(accountInputArray);}
 
     String doubleToAccountString(double value) {return To.doubleToAccountString(value);}
 
 
-    String getTitle() {
-       return gui.getTitle();
-    }
+    String getTitle() {return gui.getTitle();}
 
 
     String doubleToString(int decimalPlaces, double value) {return To.doubleToString(decimalPlaces, value);}
