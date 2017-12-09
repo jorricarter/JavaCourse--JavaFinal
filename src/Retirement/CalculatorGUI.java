@@ -126,7 +126,7 @@ public class CalculatorGUI extends JFrame{
 
     private Boolean validateInput(double age, double life, double inc, double annual){
         //if (valid) {return true;}                           this last value checks
-        if (age < life && inc > 0 && annual > 0 && (int)(life-age)/inc < 60000) return true;
+        if (age < life && inc > 0 && annual > 0 && (life-age)/inc < 60000) return true;
         //if input is impossible to calculate, alert user
         alertUser("The data you provided is invalid. Please choose more realistic parameters.", "Unable to calculate impossible equations!", 0);
         return false;

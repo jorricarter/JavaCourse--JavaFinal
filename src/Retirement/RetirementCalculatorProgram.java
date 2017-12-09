@@ -8,8 +8,7 @@ package Retirement;
 
 import static Retirement.DataProcessor.Proc;
 
-//TODO use smiles (ToGenerator)
-//TODO install database
+//TODO UPDATE DATABASE ACCESS TO USE TRY WITH RESOURCE
 //TODO how to create database (can java do it or does it need to be prepped)
 //TODO how to check for if a database exists (DatabaseIO.dataExists(title))
 //TODO how to check number of databases to know which one to load and which number to save new one as (DatabaseIO)
@@ -27,10 +26,9 @@ import static Retirement.DataProcessor.Proc;
 //TODO include instructions on how to prep database for this application
 //TODO tidy up code and delete cluttering comments
 //TODO add alternate rows
+//TODO add way to select deletion of tables
 
 class RetirementCalculatorProgram {
 
-    public static void main(String[] args) {
-        Proc.startProgram();
-    }
+    public static void main(String[] args) {Proc.startProgram();}
 }

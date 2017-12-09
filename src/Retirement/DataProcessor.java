@@ -8,6 +8,7 @@ package Retirement;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.Date;
 
 class DataProcessor {
     //grant all classes access to dataProcessor. Only way classes communicate with each other.(modular structure)
@@ -19,11 +20,13 @@ class DataProcessor {
     private CalculatorGUI gui;
     //what style the GUI will use
     private final static String GUIStyle = "javax.swing.plaf.nimbus.NimbusLookAndFeel";
+    private final static String WritePath = "c://Program Files//sqlite//db//Calculator//";
 
     //styles the gui and starts it
     void startProgram() {
+        IO.connect();
         styleGUI();
-        gui = new CalculatorGUI();
+        final CalculatorGUI gui = new CalculatorGUI();
     }
 
     //styles the gui
@@ -45,7 +48,9 @@ class DataProcessor {
         }
     }
 
+
     double[] accountInputArrayToDoubleArray(String[] accountInputArray) {return To.accountInputArrayToDoubleArray(accountInputArray);}
+
 
     String doubleToAccountString(double value) {return To.doubleToAccountString(value);}
 
@@ -56,9 +61,16 @@ class DataProcessor {
     String doubleToString(int decimalPlaces, double value) {return To.doubleToString(decimalPlaces, value);}
 
 
-//    private String storageName = CalculatorGUI.getTitle();
-//
+
+//In future implementation, I will overload this method to optionally accept filepath and name;
+    void writeDatabase(String[][] table) {IO.writeDatabase(WritePath, nameDatabaseUnique(), table);}
+
+
+//future implementations would allow users to choose the name.
+    private String nameDatabaseUnique() {return Proc.getTitle()+new Date()+".db";}
+
+
 //    public Boolean dataExists() {
-//        if (DatabaseIO.DatabaseExists(CalculatorGUI.getTitle()));
+//        if (DatabaseIO.DatabaseExists(Proc.getTitle()));
 //    }
 }
