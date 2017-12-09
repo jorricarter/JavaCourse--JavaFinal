@@ -13,13 +13,13 @@ import java.sql.SQLException;
 import static Retirement.DataProcessor.Proc;
 
 class DatabaseIO {
-    private static final String DatabaseUrl = "jdbc:sqlite:C:\\Program Files\\SQLite\\";
+    private static final String DatabaseUrl = "jdbc:sqlite:C:/Program Files/SQLite/HelloWorld.db";
 
 
     static void connect() {
         Connection connect = null;
         try {
-            Class.forName("org.sqlite.JDBC");
+            //Class.forName("org.sqlite.JDBC");
             connect = DriverManager.getConnection(DatabaseUrl);
             System.out.println("connected");
 
