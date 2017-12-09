@@ -8,8 +8,6 @@ package Retirement;
 
 import static Retirement.DataProcessor.Proc;
 
-//TODO UPDATE DATABASE ACCESS TO USE TRY WITH RESOURCE
-//TODO how to create database (can java do it or does it need to be prepped)
 //TODO how to check for if a database exists (DatabaseIO.dataExists(title))
 //TODO how to check number of databases to know which one to load and which number to save new one as (DatabaseIO)
 //TODO processes in Process for determining naming convention (Process.loadPrevious(title))
@@ -27,6 +25,7 @@ import static Retirement.DataProcessor.Proc;
 //TODO tidy up code and delete cluttering comments
 //TODO add alternate rows
 //TODO add way to select deletion of tables
+//TODO make sure clara has what she needs to run code with sqlite database
 
 class RetirementCalculatorProgram {
 

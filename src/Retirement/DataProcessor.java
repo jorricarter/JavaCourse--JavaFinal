@@ -17,13 +17,14 @@ class DataProcessor {
     private final DatabaseIO IO = new DatabaseIO();
     private final ToGenerator To = new ToGenerator();
     //can't initialize gui yet or styles wont work
-    private static CalculatorGUI gui;
+    private CalculatorGUI gui;
     //what style the GUI will use
-    private final static String GUIStyle = "zjavax.swing.plaf.nimbus.NimbusLookAndFeel";
+    private final static String GUIStyle = "javax.swing.plaf.nimbus.NimbusLookAndFeel";
     private final static String WritePath = "c://Program Files//sqlite//db//Calculator//";
 
     //styles the gui and starts it
     void startProgram() {
+//ORIGINALLY, 'GUI=NEW GUI' WAS HERE SO THIS MADE MORE SENSE.
         styleGUI();
     }
 
@@ -34,17 +35,17 @@ class DataProcessor {
             //Set it as nimbus
             UIManager.setLookAndFeel(GUIStyle);
             //color for items that don't update properly after Nimbus theme is applied
-            Color ToolTipColor = new Color(20, 80, 120);
-            Color RowColor = new Color(90, 150, 250);
+            final Color ToolTipColor = new Color(20, 80, 120);
+            final Color RowColor = new Color(90, 150, 250);
 //FOUND THESE FROM EXPERIMENTING AND PURE LUCK. They only work on some computers..?
             UIManager.put("ToolTip[Enabled].background", ToolTipColor);
             UIManager.put("Table.alternateRowColor", RowColor);
-
+//IF GUI IS BEFORE STYLE, STYLE DOESN'T WORK. IF IT'S AFTER CATCHBLCK, ALERT DOESN'T ACTIVATE.
+            gui = new CalculatorGUI();
             //if nimbus isn't found, don't crash. Let me know why my program now looks strange.
         } catch (Exception e) {
-//            alertUser("Nimbus style could not be loaded. App may look strange, but should function normally.", "Default style could not be found.", 1);
-        } finally {
-            final CalculatorGUI gui = new CalculatorGUI();
+            gui = new CalculatorGUI();
+            alertUser("Nimbus style could not be loaded. App may look strange, but should function normally.", "Default style could not be found.", 1);
         }
     }
 
@@ -61,7 +62,7 @@ class DataProcessor {
     String doubleToString(int decimalPlaces, double value) {return To.doubleToString(decimalPlaces, value);}
 
 
-    static void alertUser(String message, String title, int type) {
+    void alertUser(String message, String title, int type) {
         gui.alertUser(message, title, type);
     }
 
