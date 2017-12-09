@@ -26,8 +26,10 @@ import static Retirement.DataProcessor.Proc;
 //TODO add alternate rows
 //TODO add way to select deletion of tables
 //TODO make sure clara has what she needs to run code with sqlite database
+//TODO check for places where get/set can be passed directly through methods instead
 
 class RetirementCalculatorProgram {
-
-    public static void main(String[] args) {Proc.startProgram();}
+    public static void main(String[] args) {
+        Proc.startProgram();
+    }
 }

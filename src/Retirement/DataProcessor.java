@@ -16,19 +16,23 @@ class DataProcessor {
     //for accessing other classes
     private final DatabaseIO IO = new DatabaseIO();
     private final ToGenerator To = new ToGenerator();
-    //can't initialize gui yet or styles wont work
-    private CalculatorGUI gui;
+    //can't initialize Gui yet or styles wont work
+    private CalculatorGUI Gui;
     //what style the GUI will use
     private final static String GUIStyle = "javax.swing.plaf.nimbus.NimbusLookAndFeel";
-    private final static String WritePath = "c://Program Files//sqlite//db//Calculator//";
+    private final static String WritePath = "jdbc:sqlite:C:/Program Files/SQLite/db/";
 
-    //styles the gui and starts it
+    final String getWritePath() {
+        return WritePath;
+    }
+
+    //styles the Gui and starts it
     void startProgram() {
 //ORIGINALLY, 'GUI=NEW GUI' WAS HERE SO THIS MADE MORE SENSE.
         styleGUI();
     }
 
-    //styles the gui
+    //styles the Gui
     private void styleGUI() {
         //COPIED FROM JAVA DOCS ON HOW TO CHANGE GUI STYLE. USE TRY STATEMENT SO IF STYLE DOESN'T EXIST, ENTIRE PROGRAM STILL RUNS.
         try {
@@ -41,11 +45,11 @@ class DataProcessor {
             UIManager.put("ToolTip[Enabled].background", ToolTipColor);
             UIManager.put("Table.alternateRowColor", RowColor);
 //IF GUI IS BEFORE STYLE, STYLE DOESN'T WORK. IF IT'S AFTER CATCHBLCK, ALERT DOESN'T ACTIVATE.
-            gui = new CalculatorGUI();
+            Gui = new CalculatorGUI();
             //if nimbus isn't found, don't crash. Let me know why my program now looks strange.
         } catch (Exception e) {
-            gui = new CalculatorGUI();
-            alertUser("Nimbus style could not be loaded. App may look strange, but should function normally.", "Default style could not be found.", 1);
+            Gui = new CalculatorGUI();
+            alertUser("Part of styles could not be loaded. App may look different, but should function normally.", e.getMessage(), 1);
         }
     }
 
@@ -56,14 +60,14 @@ class DataProcessor {
     String doubleToAccountString(double value) {return To.doubleToAccountString(value);}
 
 
-//    String getTitle() {return gui.getTitle();}
+//    String getTitle() {return Gui.getTitle();}
 
 
     String doubleToString(int decimalPlaces, double value) {return To.doubleToString(decimalPlaces, value);}
 
 
     void alertUser(String message, String title, int type) {
-        gui.alertUser(message, title, type);
+        Gui.alertUser(message, title, type);
     }
 
 
@@ -73,7 +77,7 @@ class DataProcessor {
 
 
 //future implementations would allow users to choose the name.
-    private String nameDatabaseUnique() {return gui.getTitle()+new Date()+".db";}
+    private String nameDatabaseUnique() {return Gui.getTitle()+new Date()+".db";}
 
 
 //    public Boolean dataExists() {

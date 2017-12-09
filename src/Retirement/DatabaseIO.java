@@ -7,45 +7,34 @@ package Retirement;
  * */
 
 import java.sql.Connection;
-import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
 import static Retirement.DataProcessor.Proc;
 
 class DatabaseIO {
-    private static final String DatabaseUrl = "jdbc:sqlite:C:/Program Files/SQLite/HelloWorld.db";
 
 
     void writeDatabase(String databasePath, String databaseName, String[][] dataTable) {
 //KEEPING THIS IN CASE I NEED TO USE IT AGAIN TO FIX MY CONNECTION TO THE DATABASE!!!
         //Class.forName("org.sqlite.JDBC");
 
-        try (Connection connection = DriverManager.getConnection(DatabaseUrl)) {
+        try (Connection connection = DriverManager.getConnection(Proc.getWritePath())) {
             if (connection != null) {
-                DatabaseMetaData meta = connection.getMetaData();
+//                DatabaseMetaData meta = connection.getMetaData();
                 System.out.println("A new database has been created.");
             }
         } catch(SQLException e) {
-            Proc.alertUser(e.getMessage(), "Failed Connection", 0);
+            Proc.alertUser("The program failed to connect to the database and was unable to save your data.", e.getMessage(), 0);
         }
     }
 
 
-
-//    void writeDatabase(String writePath, String writeName, String[][] table) {
-//
-//        try (callDatabase(nameNewTableInDatabase(writePath+writeName, table))) {
-//
-//            write(data);
-//            closeDatabase();
-//            return true;
-//
-//        } catch (IOException e) {
-//            System.out.println("Unable to write to database " + DBName + ". Error message:\n" + e.getMessage());
-//        }
-//
+//    public static void main(String[] args) {
+//        writeDatabase(Proc.getWritePath(), "HelloWorldDELETE.THIS");
 //    }
+
+
 
     String[][] getTableData(String Title) {
 //I might want to check database for number of rows and initialize 'tableData' as 'new String['databaseRows'][5];'

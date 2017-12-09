@@ -80,7 +80,7 @@ public class CalculatorGUI extends JFrame{
 
         //what to do when 'saveInvoice' button is clicked
         saveButton.addActionListener((ActionEvent e) -> {
-//SOME EASY FIXES WERE LEFT OUT: USER TRIES TO SAVE TABLE WITH AN EMPTY COLUMN.(THAT'S THEIR CHOICE)
+            Proc.writeDatabase(Retirement2dData);
 //                if (retirementTable.getRowCount()==100) alertUser("Please populate the table to save it.", "Table is empty.", 0);
 //                else {
 //                    DatabaseIO.writeToDatabase(DatabaseIO.nameDatabase(), retirement2dData);
