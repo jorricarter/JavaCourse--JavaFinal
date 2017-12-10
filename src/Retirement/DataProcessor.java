@@ -20,12 +20,24 @@ class DataProcessor {
     private CalculatorGUI Gui;
     //what style the GUI will use
     private final static String GUIStyle = "javax.swing.plaf.nimbus.NimbusLookAndFeel";
-    private final static String WritePath = "jdbc:sqlite:C://Program Files/SQLite/db/";
+    private final static String SQLitePavement = "jdbc:sqlite:";
+//CLARA WILL PROBABLY HAVE TO CHANGE THIS TO REVIEW IT.
+    private final static String WritePath = "C://Program Files/SQLite/db/";
+//THE FIRST LETTER IS RANDOM BECAUSE I CHANGE IT WHEN TESTING IF DATABASES ARE INITIALIZING PROPERLY.
+    private final static String DatabaseName = "RetirementCalculator.db";
 
     //styles the Gui and starts it
     void startProgram() {
 //ORIGINALLY, 'GUI=NEW GUI' WAS HERE SO THIS MADE MORE SENSE.
         styleGUI();
+    }
+
+
+//    String getTitle() {return Gui.getTitle();}
+
+
+    String getSQLitePath() {
+        return SQLitePavement+WritePath+DatabaseName;
     }
 
     //styles the Gui
@@ -56,9 +68,6 @@ class DataProcessor {
     String doubleToAccountString(double value) {return To.doubleToAccountString(value);}
 
 
-//    String getTitle() {return Gui.getTitle();}
-
-
     String doubleToString(int decimalPlaces, double value) {return To.doubleToString(decimalPlaces, value);}
 
 
@@ -71,12 +80,6 @@ class DataProcessor {
     void writeDatabase(String[][] table) {
 //        IO.writeDatabase(WritePath, nameDatabaseUnique(), table);
     }
-
-
-//    final String getSQLitePath() {
-//        return SQLitePavement+WritePath;
-//    }
-
 
 //future implementations would allow users to choose the name.
     private String nameDatabaseUnique() {return Gui.getTitle()+new Date()+".db";}

@@ -6,13 +6,6 @@ package Retirement;
  * Java Programming class with Clara James.
  * */
 
-import static Retirement.DataProcessor.Proc;
-
-//TODO only save textfields to database
-//TODO how to check for if a database exists (DatabaseIO.dataExists(title))
-//TODO how to check number of databases to know which one to load and which number to save new one as (DatabaseIO)
-//TODO processes in Process for determining naming convention (Process.loadPrevious(title))
-//TODO how to create database table (DatabaseIO)
 //TODO how to put data into database table (DatabaseIO)
 //TODO how to get data from database table (DatabaseIO)
 //TODO how to convert from database format to JTable format (ToGenerator)
@@ -28,13 +21,29 @@ import static Retirement.DataProcessor.Proc;
 //TODO make sure clara has what she needs to run code with sqlite database
 //TODO check for places where get/set can be passed directly through methods instead
 //TODO print off browser and commit history to prove I've been coding all week. *-*
+//TODO only save textfields to database
+//TODO process for naming convention (Process.loadPrevious(title))
+//TODO save to database table (DatabaseIO)
+//TODO mark up first lines of methods and complicated parts. mark down all-else.
+
+import static Retirement.DataProcessor.Proc;
+
 
 class RetirementCalculatorProgram {
+
+
     public static void main(String[] args) {
-//        Proc.startProgram();
+
+        Proc.startProgram();
+
+        DB db = new DB(); DB.DatabaseConnector();
+
 //        DatabaseIO.createNewDatabase("test.db");
+
 //        DatabaseIO.createNewTable();
+
 //        DatabaseIO app = new DatabaseIO();
+
 //        app.selectAll();
     }
 }

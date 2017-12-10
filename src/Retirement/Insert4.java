@@ -5,19 +5,10 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-/**
- *
- * @author sqlitetutorial.net
- */
-public class Insert4 {
 
-    /**
-     * Connect to the test.db database
-     *
-     * @return the Connection object
-     */
+public class Insert4 {
     private Connection connect() {
-        // SQLite connection string
+        // SQLite DatabaseConnector string
         String url = "jdbc:sqlite:C://Program Files/sqlite/db/test.db";
         Connection conn = null;
         try {

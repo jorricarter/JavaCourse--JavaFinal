@@ -29,7 +29,7 @@ class DatabaseIO {
 //    }
 //
 //    public static void createNewTable() {
-//        // SQLite connection string
+//        // SQLite DatabaseConnector string
 //        String url = "jdbc:sqlite:C://Program Files/sqlite/db/test.db";
 //
 //        // SQL statement for creating a new table
@@ -50,7 +50,7 @@ class DatabaseIO {
 //     Connect to database
 //     return Connection object
 //private Connection connect() {
-//    // SQLite connection string
+//    // SQLite DatabaseConnector string
 //    String url = "jdbc:sqlite:C://Program Files/sqlite/db/test.db";
 //    Connection conn = null;
 //    try {
@@ -83,14 +83,14 @@ class DatabaseIO {
 //        }
 //    }
 }
-//        try (Connection connection = DriverManager.getConnection("jdbc:sqlite:C://Program Files/sqlite/db")
-////             Statement stmt = connection.createStatement())
+//        try (Connection DatabaseConnector = DriverManager.getConnection("jdbc:sqlite:C://Program Files/sqlite/db")
+////             Statement stmt = DatabaseConnector.createStatement())
 //                ){
 ////            stmt.execute(sql);
-//            if (connection != null) {
+//            if (DatabaseConnector != null) {
 //                Proc.alertUser("A new database has been created.", "yay!", 1);
 //            }
-//            return connection;
+//            return DatabaseConnector;
 //        } catch(SQLException e) {
 //            Proc.alertUser("The program failed to connect to the database and was unable to save your data.", e.getMessage(), 0);
 //            return null;
@@ -99,7 +99,7 @@ class DatabaseIO {
 //
 //    void DatabaseIO() {
 //        String sql = "SELECT id, name, capacity FROM warehouses";
-//        try (Connection connection = this.writeDatabase("FILLING", "IN", new String[0][0]); Statement stmt = connection.createStatement(); ResultSet rs = stmt.executeQuery(sql)) {
+//        try (Connection DatabaseConnector = this.writeDatabase("FILLING", "IN", new String[0][0]); Statement stmt = DatabaseConnector.createStatement(); ResultSet rs = stmt.executeQuery(sql)) {
 //            while (rs.next()) {
 //                System.out.println(rs.getInt("id") + "\t" + rs.getString("name") + rs.getDouble("capacity"));
 //            }

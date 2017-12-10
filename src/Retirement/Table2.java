@@ -5,18 +5,15 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-/**
- *
- * @author sqlitetutorial.net
- */
-public class Table2 {
 
-    /**
-     * Create a new table in the test database
-     *
-     */
+public class Table2 {
+//  SQLCode
+//  Connection || hold on to metadata?
+//    get statement class from connection
+//    create table
+
     public static void createNewTable() {
-        // SQLite connection string
+        // SQLite DatabaseConnector string
         String url = "jdbc:sqlite:C://Program Files/sqlite/db/test.db";
 
 //        CREATE TABLE [IF NOT EXISTS] [schema_name].table_name (
@@ -44,10 +41,9 @@ public class Table2 {
         }
     }
 
-    /**
-     * @param args the command line arguments
-     */
+
     public static void main(String[] args) {
+
         createNewTable();
     }
 
