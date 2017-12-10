@@ -27,6 +27,7 @@ import static Retirement.DataProcessor.Proc;
 //TODO add way to select deletion of tables
 //TODO make sure clara has what she needs to run code with sqlite database
 //TODO check for places where get/set can be passed directly through methods instead
+//TODO print off browser and commit history to prove I've been coding all week. *-*
 
 class RetirementCalculatorProgram {
     public static void main(String[] args) {

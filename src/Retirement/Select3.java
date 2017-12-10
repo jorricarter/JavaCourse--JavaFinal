@@ -10,7 +10,7 @@ public class Select3 {
      */
     private Connection connect() {
         // SQLite connection string
-        String url = "jdbc:sqlite:C://Program Files/sqlite/db/chinook.db";
+        String url = "jdbc:sqlite:C://Program Files/sqlite/db/test.db";
         Connection conn = null;
         try {
             conn = DriverManager.getConnection(url);
@@ -26,7 +26,7 @@ public class Select3 {
      */
     public void selectAll(){
 //* gets all columns, but it's not smart if app shares the database.
-        String sql = "SELECT ReportsTo, Title, * FROM employees";
+        String sql = "SELECT name, capacity FROM warehouses;";
 //                "SELECT Age, Required, Savings, Needed, Percent FROM Jackedindex";
 //        SELECT count(*) FROM sqlite_master WHERE type = 'table' AND name != 'android_metadata' AND name != 'sqlite_sequence';
         try (Connection conn = this.connect();
