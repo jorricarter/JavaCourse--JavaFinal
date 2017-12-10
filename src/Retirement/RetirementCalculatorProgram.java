@@ -36,6 +36,7 @@ import static Retirement.DataProcessor.Proc;
 //TODO annual income not working isn't a broken feature
 //TODO I originally planned on doint all 100,000 potential cells to aim for a good project especially because 10 at a time sounds so simple, but this way was just smarter.
 //TODO Bundle similar types of code together(like get/set) so each page has as few groups(of methods) as possible
+//TOODO have intelliJ tidy up my code for me.
 
 //TODO 5 MIN
 //TODO clean, organized, legible, modular.

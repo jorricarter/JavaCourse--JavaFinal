@@ -34,7 +34,6 @@ public class CalculatorGUI extends JFrame{
     JPanel tableViewPanel;
     private JTable retirementTable;
     private JButton saveButton;
-    private JTextField textField1;
 
     //Title that appears on top of form's program-window. has a get method as well.
     private static final String Title = "Retirement Calculator";
