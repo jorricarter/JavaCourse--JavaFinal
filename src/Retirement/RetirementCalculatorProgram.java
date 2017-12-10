@@ -8,6 +8,7 @@ package Retirement;
 
 import static Retirement.DataProcessor.Proc;
 
+//TODO only save textfields to database
 //TODO how to check for if a database exists (DatabaseIO.dataExists(title))
 //TODO how to check number of databases to know which one to load and which number to save new one as (DatabaseIO)
 //TODO processes in Process for determining naming convention (Process.loadPrevious(title))
@@ -29,9 +30,10 @@ import static Retirement.DataProcessor.Proc;
 
 class RetirementCalculatorProgram {
     public static void main(String[] args) {
-        Proc.startProgram();
-        DatabaseIO IO = new DatabaseIO();
-        IO.DatabaseIO();
-        Proc.writeDatabase(new String[0][0]);
+//        Proc.startProgram();
+//        DatabaseIO.createNewDatabase("test.db");
+//        DatabaseIO.createNewTable();
+//        DatabaseIO app = new DatabaseIO();
+//        app.selectAll();
     }
 }

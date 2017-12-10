@@ -107,7 +107,7 @@ public class CalculatorGUI extends JFrame{
         double  age = doubleInputs[0], life = doubleInputs[1], inc = doubleInputs[2], save = doubleInputs[3],
                 annual = doubleInputs[5], retire = doubleInputs[6], debt = doubleInputs[7]+retire*(life-age);
         //if input is invalid, this array will calculate as requiring 0 rows(blank table with columns and design)
-        life = (validateInput(age, life, inc, annual))? life-age : (inc=1);
+        life = (validateInput(age, life, inc, annual, retire))? life-age : (inc=1);
         //I KNOW THIS PART MIGHT BE DIFFICULT TO FOLLOW, BUT I TRIED TO MAKE IT LOOK ORGANIZED
         Retirement2dData = new String[(int)(life/inc)][ColumnHeadings.length];
         //FOR LOOP BASED ON VARIABLES INPUT INTO TEXTFIELDS.
@@ -124,9 +124,9 @@ public class CalculatorGUI extends JFrame{
     }
 
 
-    private Boolean validateInput(double age, double life, double inc, double annual){
-        //if (valid) {return true;}                           this last value checks
-        if (age < life && inc > 0 && annual > 0 && (life-age)/inc < 60000) return true;
+    private Boolean validateInput(double age, double life, double inc, double annual, double retire){
+//LAST VALUE ADDED TO AVOID POTENTIAL DATABASE CONFLICTS    if (valid) {return true;}    second-last value checks
+        if (age < life && inc > 0 && annual > 0 && (life-age)/inc < 60000 && (retire+annual)/inc > 0.02) return true;
         //if input is impossible to calculate, alert user
         alertUser("The data you provided is invalid. Please choose more realistic parameters.", "Unable to calculate impossible equations!", 0);
         return false;

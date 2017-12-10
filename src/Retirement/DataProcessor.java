@@ -69,7 +69,7 @@ class DataProcessor {
 
     //In future implementation, I will overload this method to optionally accept filepath and name;
     void writeDatabase(String[][] table) {
-        IO.writeDatabase(WritePath, nameDatabaseUnique(), table);
+//        IO.writeDatabase(WritePath, nameDatabaseUnique(), table);
     }
 
 
