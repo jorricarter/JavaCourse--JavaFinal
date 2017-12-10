@@ -2,12 +2,14 @@ package Retirement;
 
 import java.sql.*;
 
-public class Select3 {
 
-    /**
-     * Connect to the test.db database
-     * @return the Connection object
-     */
+public class Select3 {
+//get connection object
+//    get statement object from it
+//    give 'select statement' to 'executeQuery()' of 'statement object' for a 'resultset'
+//    loop through 'resultset' with 'next()'
+//    'getString()' or 'getDouble()' the 'resultset'
+
     private Connection connect() {
         // SQLite DatabaseConnector string
         String url = "jdbc:sqlite:C://Program Files/sqlite/db/test.db";

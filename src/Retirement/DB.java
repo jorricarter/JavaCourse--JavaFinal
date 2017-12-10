@@ -11,7 +11,11 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 import static Retirement.DataProcessor.Proc;
-
+//connect
+//delete statement
+//call 'preparedstatement()' on 'connection'
+//use set-methods of 'preparedStatement' object, like 'setint()', 'setString()'
+//to delete: 'executeUpdate()' method of 'PreparedSTatemett' object.
 
 class DB {
 

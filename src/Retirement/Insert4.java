@@ -7,6 +7,12 @@ import java.sql.SQLException;
 
 
 public class Insert4 {
+//    connect
+//    form 'insert statement'
+//    get 'preparedSTatement' from 'connetion'
+//    use 'preparedstatement''s set-methods like 'setint()' and 'setstring()' to set values for placeholders
+//    use 'executeUpdate()' method of 'preparedStatement object' to execute
+
     private Connection connect() {
         // SQLite DatabaseConnector string
         String url = "jdbc:sqlite:C://Program Files/sqlite/db/test.db";
