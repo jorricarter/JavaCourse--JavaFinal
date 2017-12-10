@@ -1,3 +1,4 @@
+
 package Retirement;
 
 /*
@@ -33,6 +34,7 @@ public class CalculatorGUI extends JFrame{
     JPanel tableViewPanel;
     private JTable retirementTable;
     private JButton saveButton;
+    private JTextField textField1;
 
     //Title that appears on top of form's program-window. has a get method as well.
     private static final String Title = "Retirement Calculator";
@@ -48,14 +50,14 @@ public class CalculatorGUI extends JFrame{
     }
 
 
-    CalculatorGUI() {
+     CalculatorGUI() {
         //formatter to align numbers to the right. Makes more sense for this kind of app
         DefaultTableCellRenderer jTableAlignment = new DefaultTableCellRenderer();
         jTableAlignment.setHorizontalAlignment(JLabel.RIGHT);
         //creates empty table so form isn't blank
         createJTable(Retirement2dData, jTableAlignment);
         //sets up grid because grid doesn't appear properly with this style
-        retirementTable.setShowGrid(true);
+         retirementTable.setShowGrid(true);
 //start the actual GUI.
         setContentPane(mainPanel);
         setPreferredSize(new Dimension(950, 600));
@@ -81,8 +83,6 @@ public class CalculatorGUI extends JFrame{
         //what to do when 'saveInvoice' button is clicked
         saveButton.addActionListener((ActionEvent e) -> {
             Proc.writeDatabase(Retirement2dData);
-//                if (retirementTable.getRowCount()==100) alertUser("Please populate the table to save it.", "Table is empty.", 0);
-//                else {
 //                    DatabaseIO.writeToDatabase(DatabaseIO.nameDatabase(), retirement2dData);
 //                }
         });
@@ -136,6 +136,7 @@ public class CalculatorGUI extends JFrame{
 
     private void createJTable(String[][] tableData, DefaultTableCellRenderer jTableAlignment) {
         retirementTable.setModel(new DefaultTableModel(tableData, ColumnHeadings));
+        for (int i = 0; i < tableData.length; i+=2) retirementTable.addRowSelectionInterval(i,i);
 //WHEN MY IF AND FOR SYNTAX DOESN'T USE BRACKETS, i FIT THEM ON ONE LINE SO IT'S PREDICTABLE AND DOESN'T LOOK LIKE FOLLOWING LINES ARE PART OF THE LOOP.
         for (int i = 0; i < ColumnHeadings.length; i++) retirementTable.getColumnModel().getColumn(i).setCellRenderer(jTableAlignment);
     }

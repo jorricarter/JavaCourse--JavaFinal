@@ -4,8 +4,7 @@ import java.sql.*;
 
 
 public class Select3 {
-//get connection object
-//    get statement object from it
+//    get statement object from connection
 //    give 'select statement' to 'executeQuery()' of 'statement object' for a 'resultset'
 //    loop through 'resultset' with 'next()'
 //    'getString()' or 'getDouble()' the 'resultset'

@@ -28,7 +28,7 @@ class DatabaseIO {
 //        }
 //    }
 //
-//    public static void createNewTable() {
+//    public static void tablePlacer() {
 //        // SQLite DatabaseConnector string
 //        String url = "jdbc:sqlite:C://Program Files/sqlite/db/test.db";
 //
