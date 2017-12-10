@@ -26,6 +26,17 @@ package Retirement;
 //TODO save to database table (DatabaseIO)
 //TODO mark up first lines of methods and complicated parts. mark down all-else.
 
+
+//TODO 5 MIN
+//TODO clean, organized, legible, modular.
+//TODO GUI speech
+//TODO Database
+//TODO minimize errors/input validate/exception handle/avoid errors/no bugs/complete-ish(yeah right!)
+//TODO future plans for this app logic
+//TODO comments throughout (not everywhere: useful for complexity) block comments at top (name/class/contents)
+//TODO attribute oracle.docs
+//TODO demonstration: (talk about difficulties).
+
 import static Retirement.DataProcessor.Proc;
 
 
